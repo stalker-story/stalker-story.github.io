@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="source/app.css">
+    <link rel="stylesheet" href="source/stylesheet.css">
+    <link rel="icon" href="https://chernobylgame.com/wp-content/uploads/2021/09/cropped-CHE_WWW_Favicon-1_512x512-px_20210924-192x192.png" sizes="192x192" />
+    <title>Stalker Story</title>
+</head>
+<body>
+    <!-- ------------------------------------------------------------- -->
+    <div class="remodal" data-remodal-id="license" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc">
+      <button data-remodal-action="close" class="remodal-close" aria-label="Закрыть"></button>
+      <div>
+        <h2 id="modal1Title" style="font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 1000; text-transform: uppercase; margin: 5.5vh 5vh 5vh 5vh;;">Лицензионное соглашение <i class="fa-solid fa-scroll"></i></h2>
+          <div>
+          <h2 id="modal1Title" style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 400; margin: 2.5vh 5vh 5vh 5vh;">
+            <b>© Miroro, 2022</b>
+            <br><br>
+            Пожалуйста, прочитайте следующее лицензионное соглашение перед использованием игры «Stalker Story».
+            Использование «Stalker Story» подразумевает, что вы принимаете условия настоящего лицензионного соглашения.
+            <br><br>
+            «Stalker Story» может распространяться бесплатно, при условии сохранения в неизменном виде дистрибутива, без письменного
+            разрешения обладателя авторского права. Несанкционированное копирование, инженерный анализ, декомпиляция, передача, публичная 
+            демонстрация, сдача в аренду, прокат, а также обход системы защиты от копирования строго запрещены. Содержание данной игры 
+            является полностью вымышленным и не отображает реальных событий, мест или личностей. Все совпадения абсолютно случайны.
+            Любое подобное неавторизованное использование игры влечет немедленное и автоматическое аннулирование настоящей лицензии и
+            может стать предметом преследования согласно уголовного и/или гражданского законодательства. Разработчики и издатели данной 
+            видеоигры никоим образом не одобряют, не поощряют и не оправдывают отображённое в ней поведение.
+            <br><br>
+            <b>Ограничение по гарантийным обязательствам</b>
+            <br>
+            Это программное обеспечение и сопутствующие файлы предоставляются такими "как они есть" и без гарантий по эксплуатации или иных
+            гарантий, выраженных или подразумеваемых. Гарантия товарной ценности или пригодности для определенной цели не предоставляется.
+            Пользователь принимает на себя целиком риск, связанный с использованием программы. Автор не несет ответственности за любые какие
+            бы то ни было последствия, прямой и непрямой, специальный и иной ущерб, вызванный этим программным обеспечением, (включая, без
+            ограничений, убытки от утраты прибыли от бизнеса, прерывание бизнеса, потерю деловой информации или иной финансовый урон).
+            Все авторские права на «Stalker Story» принадлежат исключительно авторам «Miroro».
+            <br><br>
+            <b>Контакты</b><br>
+            Сайт разработчика: <a href="https://mirorogames.github.io">https://mirorogames.github.io</a> <br>
+            Технической поддержкой: <a href="https://mirorogames.github.io/help-center/">https://mirorogames.github.io/help-center/</a>
+          </h2>
+          </div>
+        </div>
+    </div>
+    <!-- ------------------------------------------------------------- -->
+    <section id="center" style="background-image: url('https://sun3.userapi.com/sun3-12/s/v1/ig2/eko4TWuB70vbugW33t7HQEt2_8orL5-hbHN5mqdsVWXna0BdsvBaJ7HsxJvV52PLql9EPSH8dVdpl5P_dZDDKkv1.jpg?size=1920x1080&quality=96&type=album');">
+        <img class="element-animation stalkerstory-logo" src="source/img/logo-stalkerstory.svg" alt="">
+        <h1 class="description element-animation">
+            Stalker Story — двухмерный шутер 
+            с элементами выживания. Сможете ли Вы
+            выжить в суровой Чернобыльской Зоне
+            Отчуждения и написать свою историю?
+        </h1>
+        <div class="button-download" id="center">
+            <a class="button" download="setup.exe"  href="setup.exe">
+                Установить
+            </a>
+          </div>
+        <footer class="footer">
+            <ul>
+                <li><a href="#license">Лицензионное соглашение</a></li>
+            </ul>
+            <p style="opacity: .8; margin-top: 5px;">© Miroro</p>
+        </footer>
+    </section>
+    <!-- js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/9aaf1c70ab.js" crossorigin="anonymous"></script>
+    <script src="https://mirorogames.github.io/assets/javascript/remodal.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        function onEntry(entry) {
+          entry.forEach(change => {
+            if (change.isIntersecting) {
+             change.target.classList.add('element-show');
+            }
+          });
+        }
+        let options = {threshold: [0.5] };
+        let observer = new IntersectionObserver(onEntry, options);
+        let elements = document.querySelectorAll('.element-animation');
+        for (let elm of elements) {
+          observer.observe(elm);
+        }
+    </script>
+</body>
+</html>
